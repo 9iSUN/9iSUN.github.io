@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="巩甜甜">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="ES2015新特性"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Blog"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>ES2015新特性 - Blog</title>
+
+
+  <link rel="shortcut icon" href="/images/blog.jpg">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="images/gtt.png" alt="Blog" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  Home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  Archive
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            ES2015新特性
+            
+          </h1>
+          <p class="posted-on">
+          2016-04-06
+          </p>
+          <div class="tags-links">
+            
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>这份文件最初是从卢克·霍班（Luke Hoban）出色的es6特色回购中获得的。确保在线REPL中尝试这些功能。ECMAScript 2015是ECMAScript标准的最新版本。该标准于2015年6月获得批准。ES2015是对该语言的重大更新，自2009年ES5标准化以来，语言的第一次重大更新。主要JavaScript引擎中的这些功能的实现正在进行中。有关ECMAScript 2015语言的完整规范，请参阅ES2015标准。</p>
+<h2 id="ECMAScript-2015功能"><a href="#ECMAScript-2015功能" class="headerlink" title="ECMAScript 2015功能"></a>ECMAScript 2015功能</h2><h3 id="箭头和词汇这个"><a href="#箭头和词汇这个" class="headerlink" title="箭头和词汇这个"></a>箭头和词汇这个</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">箭头是使用=&gt;语法的缩写。它们在语法上类似于C＃，Java 8和CoffeeScript中的相关功能。他们支持表达和声明体。与函数不同，箭头与其周围的代码共享相同的词法。</div><div class="line"></div><div class="line">// Expression bodies</div><div class="line">var odds = evens.map(v =&gt; v + 1);</div><div class="line">var nums = evens.map((v, i) =&gt; v + i);</div><div class="line"></div><div class="line">// Statement bodies</div><div class="line">nums.forEach(v =&gt; &#123;</div><div class="line">  <span class="keyword">if</span> (v % 5 === 0)</div><div class="line">    fives.push(v);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// Lexical this</div><div class="line">var bob = &#123;</div><div class="line">  _name: <span class="string">"Bob"</span>,</div><div class="line">  _friends: [],</div><div class="line">  <span class="function"><span class="title">printFriends</span></span>() &#123;</div><div class="line">    this._friends.forEach(f =&gt;</div><div class="line">      console.log(this._name + <span class="string">" knows "</span> + f));</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">ES2015课程是基于原型的OO模式的简单糖。拥有单一方便的声明式表单使得类模式更易于使用，并鼓励互操作性。类支持基于原型的继承，超级调用，实例和静态方法和构造函数。</div><div class="line"></div><div class="line">class SkinnedMesh extends THREE.Mesh &#123;</div><div class="line">  constructor(geometry, materials) &#123;</div><div class="line">    super(geometry, materials);</div><div class="line"></div><div class="line">    this.idMatrix = SkinnedMesh.defaultMatrix();</div><div class="line">    this.bones = [];</div><div class="line">    this.boneMatrices = [];</div><div class="line">    //...</div><div class="line">  &#125;</div><div class="line">  update(camera) &#123;</div><div class="line">    //...</div><div class="line">    super.update();</div><div class="line">  &#125;</div><div class="line">  static <span class="function"><span class="title">defaultMatrix</span></span>() &#123;</div><div class="line">    <span class="built_in">return</span> new THREE.Matrix4();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="增强的对象文字"><a href="#增强的对象文字" class="headerlink" title="增强的对象文字"></a>增强的对象文字</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">扩展对象文字，以支持在构建中设置原型，为foo：foo分配，定义方法和进行超级调用的简写。在一起，这些也将对象文字和类声明更紧密地结合在一起，并使基于对象的设计受益于一些相同的便利。</div><div class="line"></div><div class="line">var obj = &#123;</div><div class="line">    // __proto__</div><div class="line">    __proto__: theProtoObj,</div><div class="line">    // Does not <span class="built_in">set</span> internal prototype</div><div class="line">    <span class="string">'__proto__'</span>: somethingElse,</div><div class="line">    // Shorthand <span class="keyword">for</span> ‘handler: handler’</div><div class="line">    handler,</div><div class="line">    // Methods</div><div class="line">    <span class="function"><span class="title">toString</span></span>() &#123;</div><div class="line">     // Super calls</div><div class="line">     <span class="built_in">return</span> <span class="string">"d "</span> + super.toString();</div><div class="line">    &#125;,</div><div class="line">    // Computed (dynamic) property names</div><div class="line">    [ <span class="string">"prop_"</span> + (() =&gt; 42)() ]: 42</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">模板串提供构造字符串的语法糖。这与Perl，Python等中的字符串插入功能相似。可选地，可以添加标签以允许定制字符串构造，避免注入攻击或从字符串内容构建更高级别的数据结构。</div><div class="line"></div><div class="line">// Basic literal string creation</div><div class="line">`This is a pretty little template string.`</div><div class="line"></div><div class="line">// Multiline strings</div><div class="line">`In ES5 this is</div><div class="line"> not legal.`</div><div class="line"></div><div class="line">// Interpolate variable bindings</div><div class="line">var name = <span class="string">"Bob"</span>, time = <span class="string">"today"</span>;</div><div class="line">`Hello <span class="variable">$&#123;name&#125;</span>, how are you <span class="variable">$&#123;time&#125;</span>?`</div><div class="line"></div><div class="line">// Unescaped template strings</div><div class="line">String.raw`In ES5 <span class="string">"\n"</span> is a line-feed.`</div><div class="line"></div><div class="line">// Construct an HTTP request prefix is used to interpret the replacements and construction</div><div class="line">GET`http://foo.org/bar?a=<span class="variable">$&#123;a&#125;</span>&amp;b=<span class="variable">$&#123;b&#125;</span></div><div class="line">    Content-Type: application/json</div><div class="line">    X-Credentials: <span class="variable">$&#123;credentials&#125;</span></div><div class="line">    &#123; <span class="string">"foo"</span>: <span class="variable">$&#123;foo&#125;</span>,</div><div class="line">      <span class="string">"bar"</span>: <span class="variable">$&#123;bar&#125;</span>&#125;`(myOnReadyStateChangeHandler);</div></pre></td></tr></table></figure>
+<h3 id="类-1"><a href="#类-1" class="headerlink" title="类"></a>类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="类-2"><a href="#类-2" class="headerlink" title="类"></a>类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="类-3"><a href="#类-3" class="headerlink" title="类"></a>类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">留言</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+        <div class="nav-previous">
+          <a href="/2017/08/06/hello-world/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> 上一頁</a>
+        </div>
+      
+      
+        <div class="nav-next">
+          <a href="/2015/02/09/tags/" rel="prev">下一頁 <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          <p>分享Web开发中的技术文章，分享生活中的灵感与创意，鼓励阅读，不读书则愚。</p>
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">與我聯系</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/9iSUN" class="icon icon-github" target="_blank">github</a>
+            
+              <a href="mailto:18435106235@163.com" class="icon icon-mail" target="_blank">mail</a>
+            
+              <a href="your-disqus-shortname" class="icon icon-disqus_shortname" target="_blank">disqus_shortname</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">站內搜索</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Blog &copy; 2017</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/">GTT</a> with Theme Daily</span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
